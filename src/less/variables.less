@@ -1,0 +1,284 @@
+/*******************************
+User Global Variables
+*******************************/
+@bodyBackground      : white;
+/*-------------------
+    CUSTOM VARS
+--------------------*/
+@feSpace: 0.4375rem;
+@feGutter: @feSpace * 2; // gutter tra le colonne
+@feSpacing: @feGutter; // spaziatura orizzontale griglie (viene usata per il calcolo anche di valori negativi)
+
+/*-------------------
+    SCROLLBAR 
+    setting a width for the scrollbar affects the container sizes on each breakpoints
+    TODO: deeper understanding if it's needed
+--------------------*/
+@scrollbarWidth: 0;
+
+/*-------------------
+    Border
+--------------------*/
+@borderColor: rgba(0,0,0,.1);
+
+/* border radius */
+/* See Power-user section below
+   for explanation of @px variables
+*/
+@feBorderRadius: 3px;
+@doubledBorderRadius: @feBorderRadius * 2;
+@groupedBorderRadius: @doubledBorderRadius;
+//@absoluteBorderRadius: @borderRadius;
+@defaultBorderRadius: @feBorderRadius;
+/*-------------------
+       Fonts
+--------------------*/
+/* This is the single variable that controls them all */
+@emSize: 16px;
+/* The size of page text  */
+@fontSize : @emSize;
+
+@fontName          : 'Fira Sans Condensed';
+@fontSmoothing     : antialiased;
+
+@headerFont        : @fontName, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+@pageFont          : @headerFont;
+
+
+/* Remove comment if you wanna use a google font */
+/* @googleFontName    : 'Fira+Sans+Condensed';
+@importGoogleFonts : true;
+@googleFontSizes   : '300,400,400i,700';
+@googleSubset      : 'latin';
+
+@googleProtocol    : 'https://';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}'; */
+
+
+/*-------------------
+        Sizes
+--------------------*/
+
+/*
+  Sizes are all expressed in terms of 16px/em (default rem)
+  This ensures these "ratios" remain constant despite changes in REM
+*/
+@micro           : unit((10 / @emSize), rem); // custom variable size
+@mini            : unit((12 / @emSize), rem);
+@tiny            : unit((14 / @emSize), rem);
+@small           : unit((16 / @emSize), rem);
+@medium          : unit((18 / @emSize), rem);
+@large           : unit((21 / @emSize), rem);
+@big             : unit((24 / @emSize), rem);
+@huge            : unit((36 / @emSize), rem);
+@massive         : unit((48 / @emSize), rem);
+@macro           : unit((63 / @emSize), rem);  // custom variable size
+
+/* em */
+@relativeMini    : unit( round(@miniSize * @emSize) / @emSize, em);
+@relativeTiny    : unit( round(@tinySize * @emSize) / @emSize, em);
+@relativeSmall   : unit( round(@smallSize * @emSize) / @emSize, em);
+@relativeMedium  : unit( round(@mediumSize * @emSize) / @emSize, em);
+@relativeLarge   : unit( round(@largeSize * @emSize) / @emSize, em);
+@relativeBig     : unit( round(@bigSize * @emSize) / @emSize, em);
+@relativeHuge    : unit( round(@hugeSize * @emSize) / @emSize, em);
+@relativeMassive : unit( round(@massiveSize * @emSize) / @emSize, em);
+
+/* rem */
+@absoluteMini    : unit( round(@miniSize * @emSize) / @emSize, rem);
+@absoluteTiny    : unit( round(@tinySize * @emSize) / @emSize, rem);
+@absoluteSmall   : unit( round(@smallSize * @emSize) / @emSize, rem);
+@absoluteMedium  : unit( round(@mediumSize * @emSize) / @emSize, rem);
+@absoluteLarge   : unit( round(@largeSize * @emSize) / @emSize, rem);
+@absoluteBig     : unit( round(@bigSize * @emSize) / @emSize, rem);
+@absoluteHuge    : unit( round(@hugeSize * @emSize) / @emSize, rem);
+@absoluteMassive : unit( round(@massiveSize * @emSize) / @emSize, rem);
+
+
+@microSize       : unit((10 / @emSize), rem); // custom variable size
+@miniSize        : unit((12 / @emSize), rem);
+@tinySize        : unit((14 / @emSize), rem);
+@smallSize       : unit((16 / @emSize), rem);
+@mediumSize      : unit((18 / @emSize), rem);
+@largeSize       : unit((21 / @emSize), rem);
+@bigSize         : unit((24 / @emSize), rem);
+@hugeSize        : unit((36 / @emSize), rem);
+@massiveSize     : unit((48 / @emSize), rem);
+@macroSize       : unit((63 / @emSize), rem);  // custom variable size
+
+
+
+
+/*--------------
+  Page Heading
+---------------*/
+
+
+/*--------------
+   Form Input
+---------------*/
+
+
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+@white            : #ffffff;
+@teal             : #16AF95;
+@blue             : #0071CE;
+@black            : #3A3A3A;
+@orange           : #FF6F00;
+@yellow           : #EDE03B;
+@red              : #D60012;
+@grey             : #EEEEEE;
+
+
+
+@colors: white, teal, blue, black, orange, yellow, red, grey;
+
+/*---  Light Colors  ---*/
+@lightWhite       : tint(@white, 65%);
+@lightTeal        : tint(@teal, 65%);
+@lightBlue        : tint(@blue, 65%);
+@lightBlack        : tint(@black, 65%);
+@lightOrange      : tint(@orange, 65%);
+@lightYellow      : tint(@yellow, 65%);
+@lightRed         : tint(@red, 65%);
+@lightGrey        : tint(@grey, 65%);
+
+// list of colors fot he mixin loop
+@lightColors: lightTeal, lightBlue, lightGrey, lightBlack, lightOrange, lightYellow, lightRed, lightGrey;
+
+/*---  Light Colors  ---*/
+@extraLightWhite       : tint(@white, 95%);
+@extraLightTeal        : tint(@teal, 95%);
+@extraLightBlue        : tint(@blue, 95%);
+@extraLightBlack        : tint(@black, 95%);
+@extraLightOrange      : tint(@orange, 95%);
+@extraLightYellow      : tint(@yellow, 95%);
+@extraLightRed         : tint(@red, 95%);
+@extraLightGrey        : tint(@grey, 95%);
+
+// list of colors fot he mixin loop
+@extraLightColors: extraLightTeal, extraLightBlue, extraLightGrey, extraLightBlack, extraLightOrange, extraLightYellow, extraLightRed, extraLightGrey;
+
+
+  /*---  Dark Colors  ---*/
+@darkWhite       : shade(@white, 35%);
+@darkTeal        : shade(@teal, 35%);
+@darkBlue        : shade(@blue, 35%);
+@darkBlack       : shade(@black, 35%);
+@darkOrange      : shade(@orange, 35%);
+@darkYellow      : shade(@yellow, 35%);
+@darkRed         : shade(@red, 35%);
+@darkGrey        : shade(@grey, 35%);
+// list of colors fot he mixin loop
+@darkColors: darkWhite, darkTeal, darkBlue, darkBlack, darkOrange, darkYellow, darkRed, darkGrey;
+
+/* dark shadow */
+@darkShadow: rgba(0,0,0,.2);
+
+/* main box shadow */
+@thinBoxShadow:  0px 2px 3px 1px @grey!important;
+@mainBoxShadow: 0 3px 6px 0 rgba(0,0,0,.2)!important;
+@secondaryBoxShadow: 0 3px 2px 0 @darkShadow inset !important;
+/*-------------------
+        Hover
+--------------------*/
+
+/*---  Colors  ---*/
+@primaryColorHover    : lighten(@primaryColor, 5);
+@secondaryColorHover  : lighten(@secondaryColor, 5);
+@invertedHoveredTextColor    : rgba(0, 255, 255, 1);
+
+@redHover             : @lightRed;
+@orangeHover          : @lightOrange;
+@yellowHover          : @lightYellow;
+@tealHover            : @lightTeal;
+@blueHover            : @lightBlue;
+@greyHover            : @lightGrey;
+
+/*-------------------
+        Page
+--------------------*/
+
+@pageBackground      : @lightGrey;
+@whiteBackground     : #ffffff;
+@pageOverflowX       : hidden;
+@feLineHeight          : 1.3;
+@lineHeight: 1.3;
+@textColor           : @black;
+
+/*-------------------
+        Grid
+--------------------*/
+@columnCount: 12;
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@primaryColor        : @teal;
+@secondaryColor      : @orange;
+
+@lightPrimaryColor   : @lightTeal;
+@lightSecondaryColor : @lightOrange;
+
+@darkPrimaryColor : @darkTeal;
+@darkSecondaryColor  : @darkOrange;
+
+    /*-------------------
+         Breakpoints
+    --------------------*/
+
+@mobileBreakpoint            : 320px;
+@tabletBreakpoint            : 768px;
+@computerBreakpoint          : 992px;
+@largeMonitorBreakpoint      : 1200px;
+@widescreenMonitorBreakpoint : 1440px;
+
+
+
+
+/* paddings */
+
+@padding: @feSpace;
+@verticalPadding: @feSpace;
+@horizontalPadding: @feSpace;
+@doublePadding: @feSpace * 2;
+@doubleVerticalPadding: @feSpace * 2;
+@doubleHorizontalPadding: @feSpace * 2;
+@fePadding: @padding;
+
+
+/* margin */
+@margin: @feSpace;
+@doubleMargin: @feSpace *2;
+@verticalMargin: @feSpace;
+@horizontalMargin: @feSpace;
+@feMargin: @margin;
+
+/*******************************
+             States
+*******************************/
+
+/*-------------------
+      Disabled
+--------------------*/
+
+@disabledOpacity: 0.65;
+@disabledTextColor: rgba(40, 40, 40, 0.3);
+@invertedDisabledTextColor: rgba(225, 225, 225, 0.3);
+/*-------------------
+      Error
+--------------------*/
+@errorBackground: lighten(@red, 50);
+@negativeBackgroundColor: @red;
+@errorBorder: @red;
+@errorBoxShadow: none;
+
+/*******************************
+            Dimmer
+*******************************/
