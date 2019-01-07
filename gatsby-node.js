@@ -5,7 +5,6 @@
  */
 
 const path = require('path');
-const axios = require('axios');
 
 // You can delete this file if you're not using it
 exports.createPages = async ({ actions: { createPage } }) => {

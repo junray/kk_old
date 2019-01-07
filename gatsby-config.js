@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Klippa Kloppa`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `weird band, cool guys.`,
+    author: `@junray`,
   },
   pathPrefix: '/junray',
   plugins: [
