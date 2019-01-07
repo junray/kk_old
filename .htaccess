@@ -1,0 +1,4 @@
+RewriteEngine On
+
+Redirect 301 /index.html /public/index.html
+
