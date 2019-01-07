@@ -10,15 +10,12 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="theme-color" content="#336699" />
   <script src="/socket.io/socket.io.js"></script>
+  <link rel=canonical href="public/index.html">
 </head>
 
 <body>
-  <?php
-/* This will give an error. Note the output
- * above, which is before the header() call */
-header('Location: public/index.html');
-exit;
-?>
+  <div id="___gatsby"></div>
+  <script src="/commons.js"></script>
 </body>
 
 </html>
