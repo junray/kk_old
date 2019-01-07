@@ -38,6 +38,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "css-loader": "^2.1.0",
     "prettier": "^1.15.2"
   },
