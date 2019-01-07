@@ -13,8 +13,12 @@
 </head>
 
 <body>
-  <div id="___gatsby"></div>
-  <script src="/commons.js"></script>
+  <?php
+/* This will give an error. Note the output
+ * above, which is before the header() call */
+header('Location: public/index.html');
+exit;
+?>
 </body>
 
 </html>
