@@ -36,7 +36,7 @@ const Layout = ({ children }) => (
         {typography.injectStyles()}
 
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div className="container">{children}</div>
+        <div className="container align-center">{children}</div>
       </>
     )}
   />
