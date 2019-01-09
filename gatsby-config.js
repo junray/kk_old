@@ -22,7 +22,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-typography`,
+    //`gatsby-plugin-typography`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -31,9 +31,6 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#336699`,
-        theme_color: `#336699`,
-        display: `minimal-ui`,
         //icon: `src/images/favicon.ico`, // This path is relative to the root of the site.
       },
     },
