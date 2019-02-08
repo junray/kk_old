@@ -10,7 +10,7 @@
     the mixing accepts one parameters with the color, it will be added to the name of the class:
     .full-width(extraLightTeal) --> class="full-width-extraLightTeal"
   */
-.full-width(extraLightTeal);
+.full-width(extraLightGreen);
 
 /* block element */
 .block {
@@ -39,17 +39,20 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
 .abs-centered-ver {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .abs-centered {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
 .centered {
   margin: 0 auto;
 }
@@ -57,6 +60,7 @@
 /* clear element */
 .clearing {
   clear: both;
+
   &:before,
   &:after {
     display: block;
@@ -67,6 +71,7 @@
     visibility: hidden;
   }
 }
+
 .shaded {
   box-shadow: @mainBoxShadow;
 }
@@ -88,9 +93,11 @@
   flex-direction: row !important;
   transition: transform 0.5s !important;
   -webkit-overflow-scrolling: touch;
-  > * {
+
+  >* {
     flex: 1 0 auto;
   }
+
   &::-webkit-scrollbar {
     display: none;
     -webkit-appearance: none;
@@ -104,9 +111,11 @@
 .f-left {
   float: left;
 }
+
 .f-right {
   float: right;
 }
+
 .f-none {
   float: none;
 }
@@ -117,41 +126,53 @@
 
 .flex {
   display: flex !important;
+
   &.dir-column {
     flex-direction: column;
   }
+
   /* justify-content */
   &.j-start {
     justify-content: flex-start;
   }
+
   &.j-end {
     justify-content: flex-end;
   }
+
   &.j-center {
     justify-content: center;
   }
+
   &.j-between {
     justify-content: space-between;
   }
+
   &.j-around {
     justify-content: space-around;
   }
+
   &.j-evenly {
     justify-content: space-evenly;
   }
+
   /* align items */
   &.a-start {
     align-items: flex-start;
   }
+
   &.a-end {
     align-items: flex-end;
   }
+
   &.a-center {
     align-items: center;
   }
+
   &.a-between {
     align-items: stretch;
   }
+
   &.a-around {
     align-items: baseline;
   }
@@ -177,21 +198,27 @@
 .line-through {
   text-decoration: line-through;
 }
+
 .bold {
   font-weight: 700 !important;
 }
+
 .italic {
   font-style: italic !important;
 }
+
 .normal {
   font-weight: 500 !important;
 }
+
 .light {
   font-weight: 300 !important;
 }
+
 .uppercase {
   text-transform: uppercase !important;
 }
+
 .lowercase {
   text-transform: lowercase !important;
 }
@@ -214,9 +241,11 @@
 .align-center {
   text-align: center !important;
 }
+
 .align-right {
   text-align: right !important;
 }
+
 .align-left {
   text-align: left !important;
 }
@@ -231,6 +260,7 @@
     height: 0 !important;
   }
 }
+
 .noshadow {
   box-shadow: none !important;
 }
@@ -239,15 +269,19 @@
 .noborder {
   border: none !important;
 }
+
 .noborder-left {
   border-left-width: 0 !important;
 }
+
 .noborder-right {
   border-right-width: 0 !important;
 }
+
 .noborder-bottom {
   border-bottom-width: 0 !important;
 }
+
 .noborder-top {
   border-top-width: 0 !important;
 }
@@ -265,15 +299,19 @@
 .nomargin {
   margin: 0 !important;
 }
+
 .nomargin-top {
   margin-top: 0 !important;
 }
+
 .nomargin-right {
   margin-right: 0 !important;
 }
+
 .nomargin-bottom {
   margin-bottom: 0 !important;
 }
+
 .nomargin-left {
   margin-left: 0 !important;
 }
@@ -282,18 +320,23 @@
 .nopadding {
   padding: 0 !important;
 }
+
 .nopadding-top {
   padding-top: 0 !important;
 }
+
 .nopadding-right {
   padding-right: 0 !important;
 }
+
 .nopadding-bottom {
   padding-bottom: 0 !important;
 }
+
 .nopadding-left {
   padding-left: 0 !important;
 }
+
 .sticky {
   position: fixed !important;
   width: 100%;
@@ -309,12 +352,15 @@
   &-size-cover {
     background-size: cover;
   }
+
   &-size-contain {
     background-size: contain;
   }
+
   &-size-reset {
     background-size: initial;
   }
+
   &-pos-center {
     background-position: center center;
   }

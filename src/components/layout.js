@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from 'components/header';
+
 import 'less/layout.less';
 
 const Layout = ({ children }) => (
