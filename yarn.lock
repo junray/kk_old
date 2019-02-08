@@ -5469,6 +5469,11 @@ gatsby-plugin-sharp@^2.0.14:
     sharp "^0.21.0"
     svgo "^0.7.2"
 
+gatsby-plugin-stripe@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-stripe/-/gatsby-plugin-stripe-1.2.0.tgz#06a0835cb90b72d3f8d02ee961f8ddff291946c7"
+  integrity sha512-4tG1hRxcLeSLP+1OMeuh0KTXi+t8tkvJSxjmt7OJmFAZvgBk85UqwMm7T5uIZ9M02NUKK+UlTjGsBoT/9KUGow==
+
 gatsby-plugin-typography@^2.2.2:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-2.2.4.tgz#c7cab1f3b75622b1c8b03fb4e13d2fb329b82903"
