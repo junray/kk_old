@@ -4,7 +4,6 @@ module.exports = {
     description: `weird band, cool guys.`,
     author: `@junray`,
   },
-  pathPrefix: '/junray',
   plugins: [
     {
       resolve: `gatsby-plugin-less`,
