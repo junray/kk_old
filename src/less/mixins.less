@@ -5,15 +5,16 @@
 //SIZES
 /* responsive font size */
 .fluid-type(@property, @min-vw, @max-vw, @min-size, @max-size) {
-  @{property}: @min-size!important;
+  @{property}: @min-size  !important;
+
   @media screen and (min-width: @min-vw) {
-    @{property}: calc(
-      @min-size ~' + ' unit(@max-size - @min-size) ~' * ((100vw - ' @min-vw ~') /'
-        unit(@max-vw - @min-vw) ~')'
-    ) !important;
+    @{property}: calc(@min-size ~' + 'unit(@max-size - @min-size) ~' * ((100vw - '@min-vw ~') /'
+      unit(@max-vw - @min-vw) ~')'
+      ) !important;
   }
+
   @media screen and (min-width: @max-vw) {
-    @{property}: @max-size!important;
+    @{property}: @max-size  !important;
   }
 }
 
@@ -25,7 +26,9 @@
 
 /* call it to create classes with all the sizes variables */
 .generate-sizes(length(@font-sizes));
+
 .do-sizes(@sizes, @respSize, @header) {
+
   .@{sizes},
   @{header}&.header.@{sizes},
   @{header}.@{sizes},
@@ -33,6 +36,7 @@
     .fluid-type(font-size, 320px, 1200px, @@sizes, @@respSize);
   }
 }
+
 .generate-sizes(@n, @i: 1) when (@i =< @n) {
   @size: extract(@font-sizes, @i);
   @respSize: extract(@font-sizes, (@i + 1));
@@ -68,12 +72,14 @@
 
 .coloring(@color) {
   .bg-@{color} {
-    background-color: @@color!important;
+    background-color: @@color  !important;
   }
+
   .text-@{color} {
-    color: @@color!important;
+    color: @@color  !important;
   }
 }
+
 //loop into the list of colors
 .generate-colors(@n, @i: 1) when (@i =< @n) {
   @col: extract(@colors, @i);
@@ -133,7 +139,7 @@
 
 // variables for margin and padding mixins
 @directions: '', hor, ver, top, right, bottom, left;
-@margins: 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4;
+@margins: -4, -3, -2, -1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4;
 @paddings: 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4;
 
 .generate-margins(length(@margins));
@@ -153,32 +159,34 @@
     @inc: e(replace('@{incr}', '\.', '_'));
 
     /* for all directions */
-    & when not (@direction = '') {
-      & when (@direction = hor) {
+    & when not (@direction ='') {
+      & when (@direction =hor) {
         .m-@{direction}@{inc}x {
-          margin-left: ~'@{size}' !important;
-          margin-right: ~'@{size}' !important;
+          margin-left:~'@{size}' !important;
+          margin-right:~'@{size}' !important;
         }
       }
 
-      & when (@direction = ver) {
+      & when (@direction =ver) {
         .m-@{direction}@{inc}x {
-          margin-top: ~'@{size}' !important;
-          margin-bottom: ~'@{size}' !important;
+          margin-top:~'@{size}' !important;
+          margin-bottom:~'@{size}' !important;
         }
       }
-      & when not (@direction = hor) {
-        & when not (@direction = ver) {
+
+      & when not (@direction =hor) {
+        & when not (@direction =ver) {
           .m-@{direction}@{inc}x {
-            margin-@{direction}: ~'@{size}' !important;
+            margin-@{direction}:~'@{size}' !important;
           }
         }
       }
     }
+
     /* for each direction */
-    & when (@direction = '') {
+    & when (@direction ='') {
       .m-@{inc}x {
-        margin: ~'@{size}' !important;
+        margin:~'@{size}' !important;
       }
     }
 
@@ -198,43 +206,48 @@
 
 // FOR PADDINGS
 .generate-paddings(length(@paddings));
+
 .make-padding(@incr, @directions) {
   @size: (@padding) * @incr;
 
   .do-padding(length(@directions));
+
   .do-padding(@directionsLength, @index: 1) when (@index =< @directionsLength) {
     @direction: extract(@directions, @index);
     //replace the dot in the size
     @inc: e(replace('@{incr}', '\.', '_'));
+
     /* for all directions */
-    & when not (@direction = '') {
-      & when (@direction = hor) {
+    & when not (@direction ='') {
+      & when (@direction =hor) {
         .p-@{direction}@{inc}x {
-          padding-left: ~'@{size}' !important;
-          padding-right: ~'@{size}' !important;
+          padding-left:~'@{size}' !important;
+          padding-right:~'@{size}' !important;
         }
       }
 
-      & when (@direction = ver) {
+      & when (@direction =ver) {
         .p-@{direction}@{inc}x {
-          padding-top: ~'@{size}' !important;
-          padding-bottom: ~'@{size}' !important;
+          padding-top:~'@{size}' !important;
+          padding-bottom:~'@{size}' !important;
         }
       }
-      & when not (@direction = hor) {
-        & when not (@direction = ver) {
+
+      & when not (@direction =hor) {
+        & when not (@direction =ver) {
           .p-@{direction}@{inc}x {
-            padding-@{direction}: ~'@{size}' !important;
+            padding-@{direction}:~'@{size}' !important;
           }
         }
       }
     }
 
-    & when (@direction = '') {
+    & when (@direction ='') {
       .p-@{inc}x {
-        padding: ~'@{size}' !important;
+        padding:~'@{size}' !important;
       }
     }
+
     .do-padding(@directionsLength, (@index + 1));
   }
 }
@@ -266,13 +279,15 @@
 
 .make-absolute(@directions, @offset) {
   .loop(length(@directions));
+
   .loop(@o, @i: 1) when (@i =< @o) {
     @e: extract(@directions, @i);
 
     .abs-@{e}-@{offset}x {
       position: absolute;
-      @{e}: @offset * @feSpace !important;
+      @{e}: @offset * @feSpace  !important;
     }
+
     .loop(@o, (@i + 1));
   }
 }
@@ -283,8 +298,9 @@
 
 .make-zIndex(@n, @i: 1) when (@i =< @n) {
   .zIndex-@{i} {
-    z-index: ~'@{i}00!important';
+    z-index:~'@{i}00!important';
   }
+
   .make-zIndex(@n, (@i + 1));
 }
 
@@ -308,6 +324,7 @@
       position: absolute;
       top: 0;
     }
+
     &:after {
       transform: translateX(100%);
     }

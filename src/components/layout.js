@@ -20,7 +20,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div className="container align-center">{children}</div>
+        <div className="ui container align-center">{children}</div>
       </>
     )}
   />
