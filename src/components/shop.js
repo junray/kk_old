@@ -1,46 +1,91 @@
-import React, { Fragment, Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, Fragment } from 'react';
+import Form from '../components/form';
+import Iframe from 'react-iframe';
 
-const buttonStyles = {
-  fontSize: '13px',
-  textAlign: 'center',
-  color: '#818486',
-  outline: 'none',
-  padding: '12px 60px',
-  boxShadow: '2px 5px 10px rgba(0,0,0,.1)',
-  backgroundColor: '#FFDD89',
-  borderRadius: '6px',
-  letterSpacing: '1.5px',
+const formatPrice = (amount, currency) => {
+  let price = (amount / 100).toFixed(2);
+  let numberFormat = new Intl.NumberFormat(['en-US'], {
+    style: 'currency',
+    currency: currency,
+    currencyDisplay: 'symbol',
+  });
+  return numberFormat.format(price);
 };
 
 class Shop extends Component {
+  state = {
+    showIframe: false,
+  };
   componentDidMount() {
     this.stripe = window.Stripe('pk_test_XtA3XDsJ0GNg8WI2Cwllaj64', {
       betas: ['checkout_beta_4'],
     });
   }
 
-  async redirectToCheckout(event) {
+  redirectToCheckout = async (event, sku) => {
     event.preventDefault();
-    const { error } = await this.stripe.redirectToCheckout({
-      items: [{ sku: 'sku_EUbAtscoyBAvmW', quantity: 1 }],
+
+    /* const { error } = await this.stripe.redirectToCheckout({
+      items: [{ sku: sku, quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
     });
 
     if (error) {
       console.warn('Error:', error);
-    }
-  }
+    } */
+  };
+
+  handleClick = (event, sku) => {
+    this.redirectToCheckout(event, sku);
+    this.setState({
+      showIframe: true,
+    });
+  };
 
   render() {
+    const { showIframe } = this.state;
+    const sku = {
+      id: 'sku_EUbAtscoyBAvmW',
+      object: 'sku',
+      active: true,
+      attributes: {
+        name: 'Vinile',
+      },
+      created: 1549642388,
+      currency: 'eur',
+      image: null,
+      inventory: {
+        quantity: null,
+        type: 'infinite',
+        value: null,
+      },
+      livemode: false,
+      metadata: {},
+      package_dimensions: null,
+      price: 1500,
+      product: 'prod_EUbAY6dVZS83A9',
+      updated: 1549642388,
+    };
+
     return (
-      <button
-        style={buttonStyles}
-        onClick={event => this.redirectToCheckout(event)}
-      >
-        Compralo
-      </button>
+      <Fragment>
+        <h3 className="large m-ver2x">{sku.attributes.name}</h3>
+        <p>{formatPrice(sku.price, sku.currency)}</p>
+        <Form sku={sku} redirectToCheckout={this.handleClick} />
+        {showIframe && (
+          <Iframe
+            url="http://www.youtube.com/embed/xDMP3i36naA"
+            width="450px"
+            height="450px"
+            id="myId"
+            className="myClassname"
+            display="initial"
+            position="relative"
+            allowFullScreen
+          />
+        )}
+      </Fragment>
     );
   }
 }

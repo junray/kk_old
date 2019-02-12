@@ -6,7 +6,7 @@ import 'less/header.less';
 const Header = ({ siteTitle }) => (
   <header className="header align-center m-bottom3x">
     <div className="container">
-      <h1 className="nomargin">
+      <h1 className="nomargin huge">
         <Link to="/">{siteTitle}</Link>
       </h1>
     </div>

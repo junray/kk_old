@@ -6,7 +6,7 @@ import Shop from '../components/shop';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h2>La musica è un pallone</h2>
+    <h2 className="m-ver3x">La musica è un pallone</h2>
     <p>Il nuovo disco dei Klippa Kloppa</p>
     <p>Coming soon</p>
     <Shop />
