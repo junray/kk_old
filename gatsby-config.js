@@ -1,3 +1,5 @@
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
+
 module.exports = {
   siteMetadata: {
     title: `Klippa Kloppa`,
@@ -34,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-source-stripe`,
       options: {
-        objects: ['Sku'],
+        objects: ['Sku', 'Orders'],
         secretKey: process.env.STRIPE_SECRET_KEY,
         downloadFiles: true,
       },
@@ -53,4 +55,3 @@ module.exports = {
     // 'gatsby-plugin-offline',
   ],
 };
-require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
