@@ -18,16 +18,18 @@ class Shop extends Component {
   }; */
 
   componentDidMount() {
-    /*  const handler = this.stripe.StripeCheckout.configure({
-      key: 'pk_test_XtA3XDsJ0GNg8WI2Cwllaj64',
-      image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-      locale: 'auto',
-      token: function(token) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
-        console.log(token);
-      },
-    }); */
+    const handler = () => {
+      StripeCheckout.configure({
+        key: 'pk_test_XtA3XDsJ0GNg8WI2Cwllaj64',
+        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+        locale: 'auto',
+        token: function(token) {
+          // You can access the token ID with `token.id`.
+          // Get the token ID to your server-side code for use.
+          console.log(token);
+        },
+      });
+    };
 
     this.stripe = window.Stripe('pk_test_XtA3XDsJ0GNg8WI2Cwllaj64', {
       betas: ['checkout_beta_4'],
