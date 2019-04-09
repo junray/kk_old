@@ -26,21 +26,6 @@ module.exports = {
     //`gatsby-plugin-typography`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-stripe',
-    {
-      resolve: `gatsby-plugin-stripe-checkout`,
-      options: {
-        async: true,
-      },
-    },
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Sku', 'Orders'],
-        secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: true,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
