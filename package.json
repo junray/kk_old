@@ -16,7 +16,7 @@
     "gatsby-plugin-stripe-checkout": "^1.1.2",
     "gatsby-plugin-typography": "^2.2.2",
     "gatsby-source-filesystem": "^2.0.8",
-    "gatsby-source-stripe": "^2.1.7",
+    "gatsby-source-stripe": "2.1.9",
     "gatsby-transformer-sharp": "^2.1.8",
     "gh-pages": "^2.0.1",
     "less": "^3.9.0",

@@ -19,7 +19,7 @@ class Shop extends Component {
 
   componentDidMount() {
     const handler = () => {
-      StripeCheckout.configure({
+      /* StripeCheckout.configure({
         key: 'pk_test_XtA3XDsJ0GNg8WI2Cwllaj64',
         image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
         locale: 'auto',
@@ -28,7 +28,7 @@ class Shop extends Component {
           // Get the token ID to your server-side code for use.
           console.log(token);
         },
-      });
+      }); */
     };
 
     this.stripe = window.Stripe('pk_test_XtA3XDsJ0GNg8WI2Cwllaj64', {
