@@ -5,6 +5,13 @@ module.exports = {
     title: `Klippa Kloppa`,
     description: `weird band, cool guys.`,
     author: `@junray`,
+    albumTitle: 'Liberty',
+    albumDate: 'in uscita il 20 settembre 2019',
+    teaser: 'Il nuovo disco dei Klippa Kloppa',
+    videoSrcURL: 'https://www.youtube.com/embed/tapkzNyruls',
+    videoTitle: 'Cinghiali',
+    facebook: 'https://www.facebook.com/klippakloppa',
+    instagram: 'https://www.instagram.com/klippa_kloppa',
   },
   plugins: [
     {
