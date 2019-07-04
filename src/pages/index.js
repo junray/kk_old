@@ -7,7 +7,7 @@ const IndexPage = () => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h2 className="m-ver3x">Liberty</h2>
     <p>Il nuovo disco dei Klippa Kloppa</p>
-    <p>Coming soon</p>
+    <p>20 settembre 2019</p>
   </Layout>
 );
 
