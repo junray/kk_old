@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const url = 'customers.json';
+const url = 'http://cors.io/?http://www.klippakloppa.com/customers.json';
 
 export default class Form extends React.Component {
   state = {

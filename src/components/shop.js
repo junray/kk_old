@@ -25,7 +25,7 @@ class Shop extends Component {
   redirectToCheckout = async (event, sku) => {
     event.preventDefault();
 
-    /* const { error } = await this.stripe.redirectToCheckout({
+    const { error } = await this.stripe.redirectToCheckout({
       items: [{ sku: sku, quantity: 1 }],
       successUrl: `http://localhost:8000/success/`,
       cancelUrl: `http://localhost:8000/`,
@@ -33,7 +33,7 @@ class Shop extends Component {
 
     if (error) {
       console.warn('Error:', error);
-    } */
+    }
   };
 
   handleClick = (event, sku) => {
@@ -72,7 +72,13 @@ class Shop extends Component {
       <Fragment>
         <h3 className="large m-ver2x">{sku.attributes.name}</h3>
         <p>{formatPrice(sku.price, sku.currency)}</p>
-        <Form sku={sku} redirectToCheckout={this.handleClick} />
+        {/* <Form sku={sku} redirectToCheckout={this.handleClick} /> */}
+        <button
+          className="small align-center p-ver2x p-hor4x m-ver4x text-black"
+          onClick={event => this.redirectToCheckout(event, sku.id)}
+        >
+          Compralo
+        </button>
         {showIframe && (
           <Iframe
             url="http://www.youtube.com/embed/xDMP3i36naA"
