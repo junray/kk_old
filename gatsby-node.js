@@ -6,11 +6,6 @@
 
 const path = require('path');
 
-// You can delete this file if you're not using it
-exports.createPages = async ({ actions: { createPage } }) => {
-  // `getPokemonData` is a function that fetches our data
-};
-
 exports.onCreateWebpackConfig = ({
   stage,
   rules,
