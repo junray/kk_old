@@ -47,7 +47,7 @@ const IndexPage = () => (
             <p>
               {data.site.siteMetadata.preorder}{' '}
               <a
-                href="http://www.snowdonia.bandcamp.com"
+                href="https://snowdonia.bandcamp.com/album/liberty"
                 target="_blank"
                 rel="noopener noreferrer"
               >
