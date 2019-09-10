@@ -120,7 +120,7 @@ const IndexPage = () => (
                 spotify
               </a>
             </p>
-            <p class="m-bottom4x">
+            <p className="m-bottom4x">
               Seguici su&nbsp;
               <a
                 href={data.site.siteMetadata.facebook}

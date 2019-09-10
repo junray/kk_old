@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Video = ({ videoSrcURL, videoTitle, videoSubTitle, ratio, ...props }) => {
-  console.log(videoSubTitle);
   return (
     <React.Fragment>
       <h2 style={{ marginBottom: '10px' }}>{videoTitle}</h2>
