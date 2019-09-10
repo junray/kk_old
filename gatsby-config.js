@@ -7,7 +7,7 @@ module.exports = {
     author: `@junray`,
     albumTitle: 'Liberty',
     albumDate: 'in uscita il 20 settembre 2019',
-    preorder: "preordina l'album su",
+    preorder: "preordina l'album sul",
     snowdonia: 'sito di snowdonia',
     teaser: 'Il nuovo disco dei Klippa Kloppa',
     videos: {

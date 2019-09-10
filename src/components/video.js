@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Video = ({ videoSrcURL, videoTitle, ratio, ...props }) => {
+const Video = ({ videoSrcURL, videoTitle, videoSubTitle, ratio, ...props }) => {
+  console.log(videoSubTitle);
   return (
     <React.Fragment>
-      <h2>{videoTitle}</h2>
+      <h2 style={{ marginBottom: '10px' }}>{videoTitle}</h2>
+      <p style={{ marginTop: 0 }}>{videoSubTitle}</p>
       <div className={`video r${ratio}`}>
         <iframe
           src={videoSrcURL}
