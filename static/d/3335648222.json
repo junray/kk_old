@@ -1,1 +1,0 @@
-{"errors":[{"message":"Cannot read property 'replace' of undefined","locations":[{"line":3,"column":5}],"path":["skus","group"]}],"data":{"skus":{"group":null}}}

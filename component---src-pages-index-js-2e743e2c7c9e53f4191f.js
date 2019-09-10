@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{138:function(e,a,n){"use strict";n.r(a);var t=n(0),l=n.n(t),o=n(144),c=n(143);a.default=function(){return l.a.createElement(o.a,null,l.a.createElement(c.a,{title:"Home",keywords:["gatsby","application","react"]}),l.a.createElement("h2",{className:"m-ver3x"},"Liberty"),l.a.createElement("p",null,"Il nuovo disco dei Klippa Kloppa"),l.a.createElement("p",null,"Coming soon"))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-2e743e2c7c9e53f4191f.js.map
