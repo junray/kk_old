@@ -7,9 +7,37 @@ module.exports = {
     author: `@junray`,
     albumTitle: 'Liberty',
     albumDate: 'in uscita il 20 settembre 2019',
+    preorder: "preordina l'album su",
+    snowdonia: 'sito di snowdonia',
     teaser: 'Il nuovo disco dei Klippa Kloppa',
-    videoSrcURL: 'https://www.youtube.com/embed/tapkzNyruls',
-    videoTitle: 'Cinghiali',
+    videos: {
+      cinghiali: {
+        videoSrcURL: 'https://www.youtube.com/embed/tapkzNyruls',
+        videoTitle: 'Cinghiali',
+        videoSubTitle: 'Scritto e diretto da Davide Maldi',
+      },
+      bach: {
+        videoSrcURL: 'https://www.youtube.com/embed/mbf-GHKC2e0',
+        videoTitle: 'Bach',
+        videoSubTitle: 'Scritto e diretto da Flavio Scutti',
+      },
+    },
+
+    images: {
+      press: {
+        blowup: {
+          title: 'blow up',
+          alt: 'blow up',
+          image: '../images/blowup.jpeg',
+        },
+        buscadero: {
+          title: 'buscadero',
+          alt: 'buscadero',
+          image: '../images/buscadero.jpeg',
+        },
+      },
+    },
+
     facebook: 'https://www.facebook.com/klippakloppa',
     instagram: 'https://www.instagram.com/klippa_kloppa',
   },
@@ -28,24 +56,8 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    //`gatsby-plugin-typography`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    'gatsby-plugin-stripe',
-    {
-      resolve: `gatsby-plugin-stripe-checkout`,
-      options: {
-        async: true,
-      },
-    },
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Sku', 'Order'],
-        secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: true,
+        name: `content`,
+        path: `${__dirname}/src/content`,
       },
     },
     {
@@ -54,11 +66,7 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        //icon: `src/images/favicon.ico`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 };
